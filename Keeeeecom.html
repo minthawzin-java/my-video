@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style id="webmakerstyle">
+
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #c3b4df 0%, #634d8f 100%);
+        }
+
+        /* Form တစ်ခုလုံးရဲ့ Container */
+        .signup-container {
+            background: rgba(235, 230, 245, 0.85);
+            display: flex;
+            width: 850px;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            align-items: center;
+        }
+
+        /* ဘယ်ဘက်ခြမ်း (စာရိုက်ရမည့်နေရာ) */
+        .form-section {
+            flex: 1;
+            padding: 20px 40px;
+        }
+
+        .form-section h2 {
+            color: #4a3b68;
+            font-size: 32px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #7b6d9a;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            border: none;
+            border-bottom: 1.5px solid #a698c7;
+            background: transparent;
+            padding: 8px 30px 8px 0;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            border-bottom-color: #4a3b68;
+        }
+
+        /* ညာဘက်စွန်းက Icon လေးများအတွက် */
+        .input-group i {
+            position: absolute;
+            right: 5px;
+            bottom: 10px;
+            color: #7b6d9a;
+            font-size: 14px;
+        }
+
+        /* Sign Up Button */
+        .signup-btn {
+            width: 100%;
+            background-color: #4f466b;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .signup-btn:hover {
+            background-color: #3e3656;
+        }
+
+        /* Error message ပြသရန် */
+        .error-message {
+            color: #ff3333;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: none;
+            text-align: center;
+        }
+
+        /* Already Have Account စာသား */
+        .login-link {
+            text-align: center;
+            display: block;
+            color: #7b6d9a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .login-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ညာဘက်ခြမ်း (ပုံပြသမည့်နေရာ) */
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 360px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 25px;
+            background-color: #120d1a;
+        }
+
+        /* ဖုန်း screen များအတွက် Responsive ประดิษฐ์မှု */
+        @media (max-width: 768px) {
+            .signup-container {
+                flex-direction: column-reverse;
+                width: 90%;
+                padding: 20px;
+            }
+            .image-section {
+                padding-left: 0;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .image-section img {
+                height: 250px;border:5px solid black
+            }
+            .form-section {
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        
+        <div class="form-section">
+            <h2>Go To Web</h2>
+            
+            <div id="error-box" class="error-message">Username သို့မဟုတ် Password မှားယွင်းနေပါသည်။</div>
+
+            <form id="signupForm">
+                <div class="input-group">
+                    <label for="username">User name</label>
+                    <input type="text" id="username" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                
+                <button type="submit" class="signup-btn">Blink</button>
+                
+                <a href="#" class="login-link">The typing can be different one and another</a>
+            </form>
+        </div>
+
+        <div class="image-section">
+            <img src="https://i.ibb.co/pjwBny8L/file-0000000037e071fd933c712eeac153c2.png" alt="Sign Up Visual">
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Form က ပုံမှန်အတိုင်း Submit ဖြစ်သွားတာကို တားဆီးရန်
+
+            // ရိုက်ထည့်လိုက်တဲ့ တန်ဖိုးတွေကို ယူခြင်း
+            const usernameInput = document.getElementById('username').value.trim();
+            const passwordInput = document.getElementById('password').value;
+            const errorBox = document.getElementById('error-box');
+
+            // သတ်မှတ်ထားတဲ့ အချက်အလက်တွေနဲ့ ကိုက်ညီမှု ရှိမရှိ စစ်ဆေးခြင်း
+            if (usernameInput === "Min Thaw Zin" && passwordInput === "minthawzin2009") {
+                errorBox.style.display = "none";
+                
+                // အချက်အလက်မှန်ကန်ပါက သတ်မှတ်ထားသော Link သို့ သွားမည်
+                window.location.href = "https://bee221.tiiny.site";
+            } else {
+                // အချက်အလက်မှားယွင်းပါက Error Message ပြပေးမည်
+                errorBox.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+</body>
+</html>
